@@ -73,3 +73,23 @@ function emptyFields() {
         confirmButtonText: "Tamam"
     });
 }
+function unavaiblePaymentOption() {
+    Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Uyarı",
+        text: "Bu ödeme opsiyonu şu anda kullanılamıyor. Lütfen alternatif opsiyonları deneyiniz.",
+        showConfirmButton: true,
+        confirmButtonText: "Tamam"
+    });
+}
+function unavaiblePaymentMethod() {
+    Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Ödeme Seçeneği kullanılamıyor.",
+        text: "Lütfen alternatif opsiyonları deneyiniz.",
+        showConfirmButton: true,
+        confirmButtonText: "Tamam"
+    });
+}

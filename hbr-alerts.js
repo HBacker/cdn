@@ -70,7 +70,8 @@ function emptyFields() {
         title: "Uyarı",
         text: "Lütfen tüm alanları doldurduğunuzdan emin olunuz.",
         showConfirmButton: true,
-        confirmButtonText: "Tamam"
+        confirmButtonText: "Tamam",
+        timer: 3000,
     });
 }
 function unavaiblePaymentOption() {
@@ -91,7 +92,7 @@ function unavaiblePaymentMethod() {
         text: "Sizlere daha iyi hizmet verebilmek için ilgili ödeme yöntemi güncellenmektedir.",
         showConfirmButton: true,
         confirmButtonText: "Tamam",
-        timer: 1500
+        timer: 3000
     });
 }
 function loginRequired() {
@@ -101,7 +102,7 @@ function loginRequired() {
         title: "Giriş Yapmalısın!",
         text: "Yönlendiriliyorsunuz!",
         showConfirmButton: false,
-        timer: 3000,
+        timer: 2000,
         didClose: () => {
             setTimeout(function() {
                 window.location.replace("/"); 

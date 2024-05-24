@@ -88,7 +88,7 @@ function unavaiblePaymentMethod() {
         position: "top",
         icon: "warning",
         title: "Ödeme Seçeneği kullanılamıyor.",
-        text: "Lütfen alternatif opsiyonları deneyiniz.",
+        text: "Lütfen alternatif seçenekleri deneyiniz.",
         showConfirmButton: true,
         confirmButtonText: "Tamam"
     });

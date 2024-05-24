@@ -85,7 +85,7 @@ function unavaiblePaymentOption() {
 }
 function unavaiblePaymentMethod() {
     Swal.fire({
-        position: "center",
+        position: "top",
         icon: "warning",
         title: "Ödeme yöntemi güncelleniyor!",
         text: "Sizlere daha iyi hizmet verebilmek için ilgili ödeme yöntemi güncellenmektedir.",

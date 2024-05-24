@@ -86,3 +86,6 @@ function getCookieData(name) {
     }
     return null;
 }
+$(document).ready(function(){
+    $(window).scrollTop(0);
+});

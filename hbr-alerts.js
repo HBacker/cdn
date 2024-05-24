@@ -85,10 +85,10 @@ function unavaiblePaymentOption() {
 }
 function unavaiblePaymentMethod() {
     Swal.fire({
-        position: "top",
+        position: "center",
         icon: "warning",
-        title: "Ödeme Seçeneği kullanılamıyor.",
-        text: "Lütfen alternatif seçenekleri deneyiniz.",
+        title: "Ödeme yöntemi güncelleniyor!",
+        text: "Sizlere daha iyi hizmet verebilmek için ilgili ödeme yöntemi güncellenmektedir.",
         showConfirmButton: true,
         confirmButtonText: "Tamam"
     });

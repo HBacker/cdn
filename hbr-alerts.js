@@ -90,7 +90,8 @@ function unavaiblePaymentMethod() {
         title: "Ödeme yöntemi güncelleniyor!",
         text: "Sizlere daha iyi hizmet verebilmek için ilgili ödeme yöntemi güncellenmektedir.",
         showConfirmButton: true,
-        confirmButtonText: "Tamam"
+        confirmButtonText: "Tamam",
+        timer: 1500
     });
 }
 function loginRequired() {

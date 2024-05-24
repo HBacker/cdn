@@ -93,3 +93,18 @@ function unavaiblePaymentMethod() {
         confirmButtonText: "Tamam"
     });
 }
+function loginRequired() {
+    Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Giriş Yapmalısın!",
+        text: "Yönlendiriliyorsunuz!",
+        showConfirmButton: false,
+        timer: 3000,
+        didClose: () => {
+            setTimeout(function() {
+                window.location.replace("/"); 
+            }, 1000);
+        }
+    });
+}

@@ -1,4 +1,7 @@
-*{ font-family: 'Source Sans Pro', sans-serif; }
 .swal2-popup {
     font-size: 12px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.swal2-title, .swal2-html-container, .swal2-confirm {
+    font-family: 'Source Sans Pro', sans-serif;
 }

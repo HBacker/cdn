@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
     Swal.fire({
         position: "center",
         icon: "warning",
@@ -11,3 +12,5 @@
             }, 1000);
         }
     });
+});
+

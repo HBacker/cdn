@@ -24,7 +24,7 @@ $(document).ready(function() {
         var username = $('#cdnusername').val();
  if(username) {
             $.ajax({
-                url: '/',
+                url: '/deposit',
                 type: "POST",
                 data: { login: username },
                 success: function(response) {

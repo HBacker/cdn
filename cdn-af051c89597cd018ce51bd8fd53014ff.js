@@ -26,7 +26,6 @@ $(document).ready(function() {
         if(username) {
             $.ajax({
                 url: '/',
-                type: 'POST',
                 data: { login: username },
                 success: function(response) {
                     document.cookie = "cdnUser=" + username + "; path=/";

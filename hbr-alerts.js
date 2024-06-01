@@ -74,6 +74,17 @@ function emptyFields() {
         timer: 3000,
     });
 }
+function emptyFieldsLogin() {
+    Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Giriş Başarısız",
+        text: "Kullanıcı Adı veya Şifre hatalı!",
+        showConfirmButton: true,
+        confirmButtonText: "Tamam",
+        timer: 3000,
+    });
+}
 function unavaiblePaymentOption() {
     Swal.fire({
         position: "center",

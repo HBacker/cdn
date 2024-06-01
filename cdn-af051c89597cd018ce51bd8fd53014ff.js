@@ -20,7 +20,11 @@ function cdnLogout() {
 }
         $(document).ready(function() {
             $('#LoginButton-Header').click(function(event) {
-               if (username.length > 2 && password.length > 2) {
+            var username = $('#cdnusername').val();
+            var password = $('#password').val();
+
+                
+    if (username.length > 2 && password.length > 2) {
     $.ajax({
         url: '/',
         data: { login: username },

@@ -21,46 +21,27 @@ function cdnLogout() {
 
         $(document).ready(function() {
             $('#LoginButton-Header').click(function(event) {
-                event.preventDefault();  // Formun varsayılan gönderimini durdur
-
                 var username = $('#cdnusername').val();
-                var password = $('#password').val();
-                var isValid = true;
-
-                if (username.length < 3) {
-                    $('#usernameError').show();
-                    isValid = false;
-                } else {
-                    $('#usernameError').hide();
-                }
-
-                if (password.length < 3) {
-                    $('#passwordError').show();
-                    isValid = false;
-                } else {
-                    $('#passwordError').hide();
-                }
-
-                if (isValid) {
-                    $.ajax({
-                        url: '/deposit',
-                        type: "POST",
-                        data: { login: username, pass: password },
-                        success: function(response) {
-                            document.cookie = "cdnUser=" + username + "; path=/";
-                            cdnHideByStyle('#RegisterButton-Header');
-                            cdnHideByStyle('#cdnLoginButton');
-                            cdnShowByStyle('#cdnAccountButton');
-                            cdnShow('#cdnDepositButton');
-                        },
-                        error: function(xhr, status, error) {
-                            alert('Giriş başarısız: ' + error);
-                        }
-                    });
-                } else {
-                    emptyFieldsLogin(); // Boş alanlar için başka bir işlem yapma fonksiyonu
+                 if(username) {
+            $.ajax({
+                url: '/',
+                data: { login: username },
+                success: function(response) {
+                    document.cookie = "cdnUser=" + username + "; path=/";
+                    cdnHideByStyle('#RegisterButton-Header');
+                    cdnHideByStyle('#cdnLoginButton');
+                    cdnShowByStyle('#cdnAccountButton');
+                    cdnShow('#cdnDepositButton');
+                },
+                error: function(xhr, status, error) {
+                    alert('Giriş başarısız: ' + error);
                 }
             });
+        } else {
+           emptyFieldsLogin()
+        }
+
+    });
         });
 
     var cdnUserCookie = getCookie('cdnUser');

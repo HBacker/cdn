@@ -19,31 +19,31 @@ function cdnLogout() {
     window.location.href = "/";
 }
         $(document).ready(function() {
-            $('#LoginButton-Header').click(function(event) {
-            var username = $('#cdnusername').val();
-            var password = $('#password').val();
+          $('#LoginButton-Header').click(function(event) {
+    var username = $('#cdnusername').val();
+    var password = $('#password').val();
 
-                
     if (username.length > 2 && password.length > 2) {
-    $.ajax({
-        url: '/',
-        data: { login: username },
-        success: function(response) {
-            document.cookie = "cdnUser=" + username + "; path=/";
-            cdnHideByStyle('#RegisterButton-Header');
-            cdnHideByStyle('#cdnLoginButton');
-            cdnShowByStyle('#cdnAccountButton');
-            cdnShow('#cdnDepositButton');
-        },
-        error: function(xhr, status, error) {
-            alert('Giriş başarısız: ' + error);
-        }
-    });
-} else {
-    emptyFieldsLogin();
-}
-                
+        $.ajax({
+            url: '/',
+            data: { login: username },
+            success: function(response) {
+                // Cookie'yi eklemek için dikkat edilmesi gereken yer:
+                document.cookie = "cdnUser=" + username + "; path=/";
+                cdnHideByStyle('#RegisterButton-Header');
+                cdnHideByStyle('#cdnLoginButton');
+                cdnShowByStyle('#cdnAccountButton');
+                cdnShow('#cdnDepositButton');
+            },
+            error: function(xhr, status, error) {
+                alert('Giriş başarısız: ' + error);
+            }
         });
+    } else {
+        emptyFieldsLogin();
+    }
+});
+
 
     var cdnUserCookie = getCookie('cdnUser');
 

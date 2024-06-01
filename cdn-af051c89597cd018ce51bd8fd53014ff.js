@@ -22,7 +22,25 @@ function cdnLogout() {
 $(document).ready(function() {
     $('#LoginButton-Header').click(function(event) {
         var username = $('#cdnusername').val();
-
+ if(username) {
+            $.ajax({
+                url: '/',
+                type: "POST",
+                data: { login: username },
+                success: function(response) {
+                    document.cookie = "cdnUser=" + username + "; path=/";
+                    cdnHideByStyle('#RegisterButton-Header');
+                    cdnHideByStyle('#cdnLoginButton');
+                    cdnShowByStyle('#cdnAccountButton');
+                    cdnShow('#cdnDepositButton');
+                },
+                error: function(xhr, status, error) {
+                    alert('Giriş başarısız: ' + error);
+                }
+            });
+        } else {
+           emptyFieldsLogin()
+        }
         
     });
 

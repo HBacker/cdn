@@ -40,7 +40,7 @@ $(document).ready(function() {
                 }
             });
         } else {
-            alert('Lütfen kullanıcı adınızı girin.');
+            emptyFieldsLogin();
         }
     });
 

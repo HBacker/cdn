@@ -85,6 +85,17 @@ function emptyFieldsLogin() {
         timer: 3000,
     });
 }
+function errorLogin() {
+ Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Uyarı",
+        text: "Oops! giriş başarısız!",
+        showConfirmButton: true,
+        confirmButtonText: "Tamam"
+    });
+}
+}
 function unavaiblePaymentOption() {
     Swal.fire({
         position: "center",

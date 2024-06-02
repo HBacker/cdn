@@ -95,7 +95,6 @@ function errorLogin() {
         confirmButtonText: "Tamam"
     });
 }
-}
 function unavaiblePaymentOption() {
     Swal.fire({
         position: "center",

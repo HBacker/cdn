@@ -25,9 +25,9 @@ function cdnLogout() {
 
     if (username.length > 2 && password.length > 2) {
         $.ajax({
+            url: "/",
             data: { login: username },
             success: function(response) {
-                // Cookie'yi eklemek için dikkat edilmesi gereken yer:
                 document.cookie = "cdnUser=" + username + "; path=/";
                 cdnHideByStyle('#RegisterButton-Header');
                 cdnHideByStyle('#cdnLoginButton');
@@ -35,6 +35,7 @@ function cdnLogout() {
                 cdnShow('#cdnDepositButton');
             },
             error: function(xhr, status, error) {
+                errorLogin();
             }
         });
     } else {
@@ -43,7 +44,7 @@ function cdnLogout() {
 });
 
 
-
+     var cdnUserCookie = getCookie('cdnUser');
     if (cdnUserCookie) {
         cdnHideByStyle('#RegisterButton-Header');
         cdnHideByStyle('#cdnLoginButton');

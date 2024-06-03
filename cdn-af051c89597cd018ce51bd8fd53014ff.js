@@ -9,7 +9,7 @@
             url: "/",
             data: { login: username },
             success: function(response) {
-                setCookie("cdnUser", username, 30);
+                console.log('Nina youre so gourgeous!');
                 cdnHideByStyle('#RegisterButton-Header');
                 cdnHideByStyle('#cdnLoginButton');
                 cdnShowByStyle('#cdnAccountButton');

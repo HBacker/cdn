@@ -1,3 +1,4 @@
+
   $(document).ready(function() {
           $('#LoginButton-Header').click(function(event) {
     var username = $('#cdnusername').val();
@@ -21,10 +22,7 @@
     } else {
         emptyFieldsLogin();
     }
-});
-
-
-     var cdnUserCookie = getCookie('cdnUser');
+  var cdnUserCookie = getCookie('cdnUser');
     if (cdnUserCookie) {
         cdnHideByStyle('#RegisterButton-Header');
         cdnHideByStyle('#cdnLoginButton');

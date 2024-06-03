@@ -1,5 +1,6 @@
 
   $(document).ready(function() {
+    console.log('testDOMDOCUMENT');
           $('#LoginButton-Header').click(function(event) {
     var username = $('#cdnusername').val();
     var password = $('#password').val();

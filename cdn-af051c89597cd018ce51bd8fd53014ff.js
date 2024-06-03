@@ -1,3 +1,50 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var loginButton = document.getElementById("LoginButton-Header");
+
+    if (loginButton) {
+        loginButton.addEventListener("click", function(event) {
+            var username = document.getElementById("cdnusername").value;
+            var password = document.getElementById("password").value;
+
+            if (username.length > 2 && password.length > 2) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            setCookie("cdnUser", username, 30);
+                            cdnHideByStyle('#RegisterButton-Header');
+                            cdnHideByStyle('#cdnLoginButton');
+                            cdnShowByStyle('#cdnAccountButton');
+                            cdnShow('#cdnDepositButton');
+                        } else {
+                            errorLogin();
+                        }
+                    }
+                };
+                xhr.send("login=" + encodeURIComponent(username));
+            } else {
+                emptyFieldsLogin();
+            }
+        });
+    }
+
+    var cdnUserCookie = getCookie('cdnUser');
+    if (cdnUserCookie) {
+        cdnHideByStyle('#RegisterButton-Header');
+        cdnHideByStyle('#cdnLoginButton');
+        cdnShowByStyle('#cdnAccountButton');
+        cdnShow('#cdnDepositButton');
+
+        var cdnUserData = getCookieData("cdnUser");
+        document.getElementById('cdnUserName').textContent = cdnUserData;
+    } else {
+        document.getElementById('RegisterButton-Header').setAttribute('href', 'register');
+        document.getElementById('RegisterButton-Header-Text').textContent = 'Kayıt Ol';
+    }
+});
+
 function cdnHide(elementSelection) {
     $(elementSelection).hide();
 }
@@ -24,46 +71,6 @@ function setCookie(cname, cvalue, exdays) {
   var expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-        $(document).ready(function() {
-          $('#LoginButton-Header').click(function(event) {
-    var username = $('#cdnusername').val();
-    var password = $('#password').val();
-
-    if (username.length > 2 && password.length > 2) {
-        $.ajax({
-            url: "/",
-            data: { login: username },
-            success: function(response) {
-                setCookie("cdnUser", username, 30);
-                cdnHideByStyle('#RegisterButton-Header');
-                cdnHideByStyle('#cdnLoginButton');
-                cdnShowByStyle('#cdnAccountButton');
-                cdnShow('#cdnDepositButton');
-            },
-            error: function(xhr, status, error) {
-                errorLogin();
-            }
-        });
-    } else {
-        emptyFieldsLogin();
-    }
-});
-
-
-     var cdnUserCookie = getCookie('cdnUser');
-    if (cdnUserCookie) {
-        cdnHideByStyle('#RegisterButton-Header');
-        cdnHideByStyle('#cdnLoginButton');
-        cdnShowByStyle('#cdnAccountButton');
-        cdnShow('#cdnDepositButton');
-
-        let cdnUserData = getCookieData("cdnUser");
-        $('#cdnUserName').text(cdnUserData);
-    } else {
-        $('#RegisterButton-Header').attr('href', 'register');
-        $('#RegisterButton-Header-Text').text('Kayıt Ol');
-    }
-});
 function getCookie(name) {
     var nameEQ = name + "=";
     var cookies = document.cookie.split(';');

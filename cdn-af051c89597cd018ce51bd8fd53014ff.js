@@ -1,25 +1,16 @@
 
   $(document).ready(function() {
-    console.log('testDOMDOCUMENT');
           $('#LoginButton-Header').click(function(event) {
     var username = $('#cdnusername').val();
     var password = $('#password').val();
 
     if (username.length > 2 && password.length > 2) {
-        $.ajax({
-            url: "/",
-            data: { login: username },
-            success: function(response) {
+       
                 console.log('Nina youre so gourgeous!');
                 cdnHideByStyle('#RegisterButton-Header');
                 cdnHideByStyle('#cdnLoginButton');
                 cdnShowByStyle('#cdnAccountButton');
                 cdnShow('#cdnDepositButton');
-            },
-            error: function(xhr, status, error) {
-                errorLogin();
-            }
-        });
     } else {
         emptyFieldsLogin();
     }

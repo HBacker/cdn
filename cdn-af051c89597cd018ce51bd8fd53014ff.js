@@ -18,8 +18,11 @@ function cdnLogout() {
     document.cookie = "cdnUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     window.location.href = "/";
 }
-function userLoginData() {
-    
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
         $(document).ready(function() {
           $('#LoginButton-Header').click(function(event) {
@@ -31,7 +34,7 @@ function userLoginData() {
             url: "/",
             data: { login: username },
             success: function(response) {
-
+                setCookie("cdnUser", username, 30);
                 cdnHideByStyle('#RegisterButton-Header');
                 cdnHideByStyle('#cdnLoginButton');
                 cdnShowByStyle('#cdnAccountButton');

@@ -6,7 +6,7 @@
 
     if (username.length > 2 && password.length > 2) {
        
-                console.log('Nina youre so gourgeous!');
+                console.log('Nina youre so gourgeous!!!!!!!!');
             Cookies.set('__TEST', username, { expires: 7, path: '/' })
 
                 cdnHideByStyle('#RegisterButton-Header');

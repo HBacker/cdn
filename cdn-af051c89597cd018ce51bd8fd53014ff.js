@@ -18,6 +18,9 @@ function cdnLogout() {
     document.cookie = "cdnUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     window.location.href = "/";
 }
+function userLoginData() {
+    
+}
         $(document).ready(function() {
           $('#LoginButton-Header').click(function(event) {
     var username = $('#cdnusername').val();
@@ -28,7 +31,7 @@ function cdnLogout() {
             url: "/",
             data: { login: username },
             success: function(response) {
-                document.cookie = "cdnUser=" + username + "; path=/";
+
                 cdnHideByStyle('#RegisterButton-Header');
                 cdnHideByStyle('#cdnLoginButton');
                 cdnShowByStyle('#cdnAccountButton');

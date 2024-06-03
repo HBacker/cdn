@@ -116,7 +116,7 @@ function unavaiblePaymentMethod() {
         timer: 3000
     });
 }
-function loginRequiredx() {
+function loginRequired() {
     Swal.fire({
         position: "center",
         icon: "warning",

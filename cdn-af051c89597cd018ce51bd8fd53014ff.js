@@ -101,3 +101,8 @@ function getCookieData(name) {
 $(document).ready(function(){
     $(window).scrollTop(0);
 });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z5NJ01BW5X');
